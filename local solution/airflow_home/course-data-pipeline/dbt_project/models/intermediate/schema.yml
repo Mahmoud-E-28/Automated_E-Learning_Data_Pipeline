@@ -1,0 +1,79 @@
+version: 2
+
+models:
+  - name: int_courses_combined
+    description: >
+      Unified view of all courses from Coursera, Udacity, and Udemy.
+      Combines the three staging models using UNION ALL.
+    columns:
+      - name: course_id
+        description: "Unique identifier for the course within its platform"
+        tests:
+          - not_null
+      - name: platform
+        description: "Source platform (Coursera, Udacity, or Udemy)"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Coursera', 'Udacity', 'Udemy']
+      - name: title
+        description: "Course title"
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - course_id
+            - platform
+
+  - name: int_courses_standardized
+    description: >
+      Enriched course data with business logic:
+      - Level standardization
+      - Price categorization (Free, Cheap, Medium, Expensive, Premium)
+      - Duration categorization (Short, Medium, Long, Extensive)
+      - Popularity score (rating × log(enrolled_students))
+      - Engagement rate (reviews / enrolled students)
+    columns:
+      - name: course_id
+        description: "Unique identifier for the course"
+        tests:
+          - not_null
+      - name: platform
+        description: "Source platform"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Coursera', 'Udacity', 'Udemy']
+      - name: level
+        description: "Standardized difficulty level"
+        tests:
+          - accepted_values:
+              values: ['Beginner', 'Intermediate', 'Advanced', 'All Levels', 'Unknown']
+      - name: price_category
+        description: "Price tier classification"
+        tests:
+          - accepted_values:
+              values: ['Free', 'Cheap', 'Medium', 'Expensive', 'Premium', 'Unknown']
+      - name: duration_category
+        description: "Duration tier classification"
+        tests:
+          - accepted_values:
+              values: ['Short', 'Medium', 'Long', 'Extensive', 'Unknown']
+      - name: rating
+        description: "Course rating (0-5 scale)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+              config:
+                severity: warn
+      - name: popularity_score
+        description: "Popularity score combining rating and enrollment"
+      - name: engagement_rate_pct
+        description: "Percentage of enrolled students who left a review"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - course_id
+            - platform

@@ -1,0 +1,169 @@
+[2026-06-27T16:49:47.287+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2026-06-27T16:49:47.300+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: course_data_pipeline.dbt_build manual__2026-06-27T16:42:08+00:00 [queued]>
+[2026-06-27T16:49:47.302+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: course_data_pipeline.dbt_build manual__2026-06-27T16:42:08+00:00 [queued]>
+[2026-06-27T16:49:47.302+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2026-06-27T16:49:47.306+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_build> on 2026-06-27 16:42:08+00:00
+[2026-06-27T16:49:47.308+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'course_data_pipeline', 'dbt_build', 'manual__2026-06-27T16:42:08+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/course_data_pipeline.py', '--cfg-path', '/tmp/tmp03d7zvfr']
+[2026-06-27T16:49:47.310+0000] {standard_task_runner.py:91} INFO - Job 8: Subtask dbt_build
+[2026-06-27T16:49:47.309+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:62 DeprecationWarning: This process (pid=618) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2026-06-27T16:49:47.310+0000] {standard_task_runner.py:64} INFO - Started process 619 to run task
+[2026-06-27T16:49:47.325+0000] {task_command.py:426} INFO - Running <TaskInstance: course_data_pipeline.dbt_build manual__2026-06-27T16:42:08+00:00 [running]> on host 9ada56374f3d
+[2026-06-27T16:49:47.349+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='course_data_team' AIRFLOW_CTX_DAG_ID='course_data_pipeline' AIRFLOW_CTX_TASK_ID='dbt_build' AIRFLOW_CTX_EXECUTION_DATE='2026-06-27T16:42:08+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2026-06-27T16:42:08+00:00'
+[2026-06-27T16:49:47.350+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2026-06-27T16:49:47.355+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2026-06-27T16:49:47.355+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/course-data-pipeline/dbt_project && dbt build --project-dir /opt/***/course-data-pipeline/dbt_project --profiles-dir /opt/***/course-data-pipeline/dbt_project ']
+[2026-06-27T16:49:47.358+0000] {subprocess.py:86} INFO - Output:
+[2026-06-27T16:49:48.208+0000] {subprocess.py:93} INFO - [0m16:49:48  Running with dbt=1.11.11
+[2026-06-27T16:49:48.320+0000] {subprocess.py:93} INFO - [0m16:49:48  Registered adapter: duckdb=1.10.1
+[2026-06-27T16:49:48.536+0000] {subprocess.py:93} INFO - [0m16:49:48  Found 14 models, 1 snapshot, 1 analysis, 73 data tests, 3 sources, 603 macros
+[2026-06-27T16:49:48.540+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.540+0000] {subprocess.py:93} INFO - [0m16:49:48  Concurrency: 1 threads (target='dev')
+[2026-06-27T16:49:48.540+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.619+0000] {subprocess.py:93} INFO - [0m16:49:48  1 of 88 START sql view model main.stg_coursera ................................. [RUN]
+[2026-06-27T16:49:48.644+0000] {subprocess.py:93} INFO - [0m16:49:48  1 of 88 ERROR creating sql view model main.stg_coursera ........................ [[31mERROR[0m in 0.02s]
+[2026-06-27T16:49:48.645+0000] {subprocess.py:93} INFO - [0m16:49:48  2 of 88 START sql view model main.stg_udacity .................................. [RUN]
+[2026-06-27T16:49:48.654+0000] {subprocess.py:93} INFO - [0m16:49:48  2 of 88 ERROR creating sql view model main.stg_udacity ......................... [[31mERROR[0m in 0.01s]
+[2026-06-27T16:49:48.655+0000] {subprocess.py:93} INFO - [0m16:49:48  3 of 88 START sql view model main.stg_udemy .................................... [RUN]
+[2026-06-27T16:49:48.664+0000] {subprocess.py:93} INFO - [0m16:49:48  3 of 88 ERROR creating sql view model main.stg_udemy ........................... [[31mERROR[0m in 0.01s]
+[2026-06-27T16:49:48.665+0000] {subprocess.py:93} INFO - [0m16:49:48  4 of 88 SKIP test accepted_values_stg_coursera_platform__Coursera .............. [[33mSKIP[0m]
+[2026-06-27T16:49:48.666+0000] {subprocess.py:93} INFO - [0m16:49:48  5 of 88 SKIP test dbt_utils_accepted_range_stg_coursera_duration_hours__0 ...... [[33mSKIP[0m]
+[2026-06-27T16:49:48.667+0000] {subprocess.py:93} INFO - [0m16:49:48  6 of 88 SKIP test dbt_utils_accepted_range_stg_coursera_enrolled_students__0 ... [[33mSKIP[0m]
+[2026-06-27T16:49:48.668+0000] {subprocess.py:93} INFO - [0m16:49:48  7 of 88 SKIP test dbt_utils_accepted_range_stg_coursera_price__0 ............... [[33mSKIP[0m]
+[2026-06-27T16:49:48.668+0000] {subprocess.py:93} INFO - [0m16:49:48  8 of 88 SKIP test dbt_utils_accepted_range_stg_coursera_rating__5__0 ........... [[33mSKIP[0m]
+[2026-06-27T16:49:48.669+0000] {subprocess.py:93} INFO - [0m16:49:48  9 of 88 SKIP test not_null_stg_coursera_course_id .............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.670+0000] {subprocess.py:93} INFO - [0m16:49:48  10 of 88 SKIP test not_null_stg_coursera_platform .............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.671+0000] {subprocess.py:93} INFO - [0m16:49:48  11 of 88 SKIP test not_null_stg_coursera_title ................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.671+0000] {subprocess.py:93} INFO - [0m16:49:48  12 of 88 SKIP test unique_stg_coursera_course_id ............................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.672+0000] {subprocess.py:93} INFO - [0m16:49:48  13 of 88 SKIP test accepted_values_stg_udacity_platform__Udacity ............... [[33mSKIP[0m]
+[2026-06-27T16:49:48.673+0000] {subprocess.py:93} INFO - [0m16:49:48  14 of 88 SKIP test dbt_utils_accepted_range_stg_udacity_duration_hours__0 ...... [[33mSKIP[0m]
+[2026-06-27T16:49:48.674+0000] {subprocess.py:93} INFO - [0m16:49:48  15 of 88 SKIP test dbt_utils_accepted_range_stg_udacity_enrolled_students__0 ... [[33mSKIP[0m]
+[2026-06-27T16:49:48.675+0000] {subprocess.py:93} INFO - [0m16:49:48  16 of 88 SKIP test dbt_utils_accepted_range_stg_udacity_price__0 ............... [[33mSKIP[0m]
+[2026-06-27T16:49:48.676+0000] {subprocess.py:93} INFO - [0m16:49:48  17 of 88 SKIP test dbt_utils_accepted_range_stg_udacity_rating__5__0 ........... [[33mSKIP[0m]
+[2026-06-27T16:49:48.676+0000] {subprocess.py:93} INFO - [0m16:49:48  18 of 88 SKIP test not_null_stg_udacity_course_id .............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.677+0000] {subprocess.py:93} INFO - [0m16:49:48  19 of 88 SKIP test not_null_stg_udacity_platform ............................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.678+0000] {subprocess.py:93} INFO - [0m16:49:48  20 of 88 SKIP test not_null_stg_udacity_title .................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.679+0000] {subprocess.py:93} INFO - [0m16:49:48  21 of 88 SKIP test unique_stg_udacity_course_id ................................ [[33mSKIP[0m]
+[2026-06-27T16:49:48.680+0000] {subprocess.py:93} INFO - [0m16:49:48  22 of 88 SKIP test accepted_values_stg_udemy_platform__Udemy ................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.681+0000] {subprocess.py:93} INFO - [0m16:49:48  23 of 88 SKIP test dbt_utils_accepted_range_stg_udemy_duration_hours__0 ........ [[33mSKIP[0m]
+[2026-06-27T16:49:48.682+0000] {subprocess.py:93} INFO - [0m16:49:48  24 of 88 SKIP test dbt_utils_accepted_range_stg_udemy_enrolled_students__0 ..... [[33mSKIP[0m]
+[2026-06-27T16:49:48.683+0000] {subprocess.py:93} INFO - [0m16:49:48  25 of 88 SKIP test dbt_utils_accepted_range_stg_udemy_price__0 ................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.684+0000] {subprocess.py:93} INFO - [0m16:49:48  26 of 88 SKIP test dbt_utils_accepted_range_stg_udemy_rating__5__0 ............. [[33mSKIP[0m]
+[2026-06-27T16:49:48.684+0000] {subprocess.py:93} INFO - [0m16:49:48  27 of 88 SKIP test not_null_stg_udemy_course_id ................................ [[33mSKIP[0m]
+[2026-06-27T16:49:48.685+0000] {subprocess.py:93} INFO - [0m16:49:48  28 of 88 SKIP test not_null_stg_udemy_platform ................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.686+0000] {subprocess.py:93} INFO - [0m16:49:48  29 of 88 SKIP test not_null_stg_udemy_title .................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.687+0000] {subprocess.py:93} INFO - [0m16:49:48  30 of 88 SKIP test unique_stg_udemy_course_id .................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.688+0000] {subprocess.py:93} INFO - [0m16:49:48  31 of 88 SKIP relation main.int_courses_combined ............................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.689+0000] {subprocess.py:93} INFO - [0m16:49:48  32 of 88 SKIP test accepted_values_int_courses_combined_platform__Coursera__Udacity__Udemy  [[33mSKIP[0m]
+[2026-06-27T16:49:48.690+0000] {subprocess.py:93} INFO - [0m16:49:48  33 of 88 SKIP test dbt_utils_unique_combination_of_columns_int_courses_combined_course_id__platform  [[33mSKIP[0m]
+[2026-06-27T16:49:48.691+0000] {subprocess.py:93} INFO - [0m16:49:48  34 of 88 SKIP test not_null_int_courses_combined_course_id ..................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.692+0000] {subprocess.py:93} INFO - [0m16:49:48  35 of 88 SKIP test not_null_int_courses_combined_platform ...................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.692+0000] {subprocess.py:93} INFO - [0m16:49:48  36 of 88 SKIP test not_null_int_courses_combined_title ......................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.693+0000] {subprocess.py:93} INFO - [0m16:49:48  37 of 88 SKIP relation main.int_courses_standardized ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.695+0000] {subprocess.py:93} INFO - [0m16:49:48  38 of 88 SKIP test accepted_values_int_courses_standardized_duration_category__Short__Medium__Long__Extensive__Unknown  [[33mSKIP[0m]
+[2026-06-27T16:49:48.695+0000] {subprocess.py:93} INFO - [0m16:49:48  39 of 88 SKIP test accepted_values_int_courses_standardized_level__Beginner__Intermediate__Advanced__All_Levels__Unknown  [[33mSKIP[0m]
+[2026-06-27T16:49:48.696+0000] {subprocess.py:93} INFO - [0m16:49:48  40 of 88 SKIP test accepted_values_int_courses_standardized_platform__Coursera__Udacity__Udemy  [[33mSKIP[0m]
+[2026-06-27T16:49:48.697+0000] {subprocess.py:93} INFO - [0m16:49:48  41 of 88 SKIP test accepted_values_int_courses_standardized_price_category__Free__Cheap__Medium__Expensive__Premium__Unknown  [[33mSKIP[0m]
+[2026-06-27T16:49:48.698+0000] {subprocess.py:93} INFO - [0m16:49:48  42 of 88 SKIP test dbt_utils_accepted_range_int_courses_standardized_rating__5__0  [[33mSKIP[0m]
+[2026-06-27T16:49:48.699+0000] {subprocess.py:93} INFO - [0m16:49:48  43 of 88 SKIP test dbt_utils_unique_combination_of_columns_int_courses_standardized_course_id__platform  [[33mSKIP[0m]
+[2026-06-27T16:49:48.700+0000] {subprocess.py:93} INFO - [0m16:49:48  44 of 88 SKIP test not_null_int_courses_standardized_course_id ................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.700+0000] {subprocess.py:93} INFO - [0m16:49:48  45 of 88 SKIP test not_null_int_courses_standardized_platform .................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.701+0000] {subprocess.py:93} INFO - [0m16:49:48  46 of 88 SKIP relation main.dim_date ........................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.702+0000] {subprocess.py:93} INFO - [0m16:49:48  47 of 88 SKIP relation main.dim_domain ......................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.703+0000] {subprocess.py:93} INFO - [0m16:49:48  48 of 88 SKIP relation main.dim_instructor ..................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.704+0000] {subprocess.py:93} INFO - [0m16:49:48  49 of 88 SKIP relation main.dim_language ....................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.705+0000] {subprocess.py:93} INFO - [0m16:49:48  50 of 88 SKIP relation main.dim_level .......................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.706+0000] {subprocess.py:93} INFO - [0m16:49:48  51 of 88 SKIP relation main.dim_offering_type .................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.707+0000] {subprocess.py:93} INFO - [0m16:49:48  52 of 88 SKIP relation main.dim_platform ....................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.708+0000] {subprocess.py:93} INFO - [0m16:49:48  53 of 88 SKIP relation snapshots.offering_snapshot ............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.708+0000] {subprocess.py:93} INFO - [0m16:49:48  54 of 88 SKIP test not_null_dim_date_date_id ................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.709+0000] {subprocess.py:93} INFO - [0m16:49:48  55 of 88 SKIP test unique_dim_date_date_id ..................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.710+0000] {subprocess.py:93} INFO - [0m16:49:48  56 of 88 SKIP test not_null_dim_domain_domain_id ............................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.711+0000] {subprocess.py:93} INFO - [0m16:49:48  57 of 88 SKIP test unique_dim_domain_domain_id ................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.712+0000] {subprocess.py:93} INFO - [0m16:49:48  58 of 88 SKIP test not_null_dim_instructor_instructor_id ....................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.713+0000] {subprocess.py:93} INFO - [0m16:49:48  59 of 88 SKIP test unique_dim_instructor_instructor_id ......................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.713+0000] {subprocess.py:93} INFO - [0m16:49:48  60 of 88 SKIP test not_null_dim_language_language_id ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.714+0000] {subprocess.py:93} INFO - [0m16:49:48  61 of 88 SKIP test unique_dim_language_language_id ............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.715+0000] {subprocess.py:93} INFO - [0m16:49:48  62 of 88 SKIP test not_null_dim_level_level_id ................................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.716+0000] {subprocess.py:93} INFO - [0m16:49:48  63 of 88 SKIP test unique_dim_level_level_id ................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.717+0000] {subprocess.py:93} INFO - [0m16:49:48  64 of 88 SKIP test not_null_dim_offering_type_offering_type_id ................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.718+0000] {subprocess.py:93} INFO - [0m16:49:48  65 of 88 SKIP test unique_dim_offering_type_offering_type_id ................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.718+0000] {subprocess.py:93} INFO - [0m16:49:48  66 of 88 SKIP test not_null_dim_platform_platform_id ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.719+0000] {subprocess.py:93} INFO - [0m16:49:48  67 of 88 SKIP test unique_dim_platform_platform_id ............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.720+0000] {subprocess.py:93} INFO - [0m16:49:48  68 of 88 SKIP relation main.dim_offering ....................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.721+0000] {subprocess.py:93} INFO - [0m16:49:48  69 of 88 SKIP test not_null_dim_offering_offering_id ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.722+0000] {subprocess.py:93} INFO - [0m16:49:48  70 of 88 SKIP test not_null_dim_offering_offering_sk ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.723+0000] {subprocess.py:93} INFO - [0m16:49:48  71 of 88 SKIP test unique_dim_offering_offering_sk ............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.724+0000] {subprocess.py:93} INFO - [0m16:49:48  72 of 88 SKIP relation main.fact_offerings ..................................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.725+0000] {subprocess.py:93} INFO - [0m16:49:48  73 of 88 SKIP test not_null_fact_offerings_date_id ............................. [[33mSKIP[0m]
+[2026-06-27T16:49:48.726+0000] {subprocess.py:93} INFO - [0m16:49:48  74 of 88 SKIP test not_null_fact_offerings_domain_id ........................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.727+0000] {subprocess.py:93} INFO - [0m16:49:48  75 of 88 SKIP test not_null_fact_offerings_instructor_id ....................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.728+0000] {subprocess.py:93} INFO - [0m16:49:48  76 of 88 SKIP test not_null_fact_offerings_language_id ......................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.728+0000] {subprocess.py:93} INFO - [0m16:49:48  77 of 88 SKIP test not_null_fact_offerings_level_id ............................ [[33mSKIP[0m]
+[2026-06-27T16:49:48.729+0000] {subprocess.py:93} INFO - [0m16:49:48  78 of 88 SKIP test not_null_fact_offerings_offering_sk ......................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.730+0000] {subprocess.py:93} INFO - [0m16:49:48  79 of 88 SKIP test not_null_fact_offerings_offering_type_id .................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.731+0000] {subprocess.py:93} INFO - [0m16:49:48  80 of 88 SKIP test not_null_fact_offerings_platform_id ......................... [[33mSKIP[0m]
+[2026-06-27T16:49:48.732+0000] {subprocess.py:93} INFO - [0m16:49:48  81 of 88 SKIP test relationships_fact_offerings_date_id__date_id__ref_dim_date_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.732+0000] {subprocess.py:93} INFO - [0m16:49:48  82 of 88 SKIP test relationships_fact_offerings_domain_id__domain_id__ref_dim_domain_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.733+0000] {subprocess.py:93} INFO - [0m16:49:48  83 of 88 SKIP test relationships_fact_offerings_instructor_id__instructor_id__ref_dim_instructor_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.734+0000] {subprocess.py:93} INFO - [0m16:49:48  84 of 88 SKIP test relationships_fact_offerings_language_id__language_id__ref_dim_language_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.735+0000] {subprocess.py:93} INFO - [0m16:49:48  85 of 88 SKIP test relationships_fact_offerings_level_id__level_id__ref_dim_level_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.736+0000] {subprocess.py:93} INFO - [0m16:49:48  86 of 88 SKIP test relationships_fact_offerings_offering_sk__offering_sk__ref_dim_offering_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.737+0000] {subprocess.py:93} INFO - [0m16:49:48  87 of 88 SKIP test relationships_fact_offerings_offering_type_id__offering_type_id__ref_dim_offering_type_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.738+0000] {subprocess.py:93} INFO - [0m16:49:48  88 of 88 SKIP test relationships_fact_offerings_platform_id__platform_id__ref_dim_platform_  [[33mSKIP[0m]
+[2026-06-27T16:49:48.741+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.741+0000] {subprocess.py:93} INFO - [0m16:49:48  Finished running 1 snapshot, 9 table models, 73 data tests, 5 view models in 0 hours 0 minutes and 0.20 seconds (0.20s).
+[2026-06-27T16:49:48.772+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.772+0000] {subprocess.py:93} INFO - [0m16:49:48  [31mCompleted with 3 errors, 0 partial successes, and 0 warnings:[0m
+[2026-06-27T16:49:48.772+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.772+0000] {subprocess.py:93} INFO - [0m16:49:48  [31mFailure in model stg_coursera (models/staging/stg_coursera.sql)[0m
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48    Runtime Error in model stg_coursera (models/staging/stg_coursera.sql)
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name coursera_final_data does not exist!
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO -   Did you mean "information_schema.constraint_table_usage"?
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - 
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO -   LINE 8:     select * from "dbt_local"."main"."coursera_final_data"
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO -                             ^
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48    compiled code at target/compiled/dbt_project/models/staging/stg_coursera.sql
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48  [31mFailure in model stg_udacity (models/staging/stg_udacity.sql)[0m
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO - [0m16:49:48    Runtime Error in model stg_udacity (models/staging/stg_udacity.sql)
+[2026-06-27T16:49:48.773+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name udacity_final_data does not exist!
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -   Did you mean "main.pragma_database_list"?
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - 
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -   LINE 8:     select * from "dbt_local"."main"."udacity_final_data"
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -                             ^
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - [0m16:49:48    compiled code at target/compiled/dbt_project/models/staging/stg_udacity.sql
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - [0m16:49:48  [31mFailure in model stg_udemy (models/staging/stg_udemy.sql)[0m
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - [0m16:49:48    Runtime Error in model stg_udemy (models/staging/stg_udemy.sql)
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -   Catalog Error: Table with name udemy_final_data does not exist!
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -   Did you mean "information_schema.schemata"?
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO - 
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -   LINE 8:     select * from "dbt_local"."main"."udemy_final_data"
+[2026-06-27T16:49:48.774+0000] {subprocess.py:93} INFO -                             ^
+[2026-06-27T16:49:48.775+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.775+0000] {subprocess.py:93} INFO - [0m16:49:48    compiled code at target/compiled/dbt_project/models/staging/stg_udemy.sql
+[2026-06-27T16:49:48.775+0000] {subprocess.py:93} INFO - [0m16:49:48
+[2026-06-27T16:49:48.775+0000] {subprocess.py:93} INFO - [0m16:49:48  Done. PASS=0 WARN=0 ERROR=3 SKIP=85 NO-OP=0 TOTAL=88
+[2026-06-27T16:49:49.617+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2026-06-27T16:49:49.618+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2026-06-27T16:49:49.622+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2026-06-27T16:49:49.624+0000] {taskinstance.py:1206} INFO - Marking task as UP_FOR_RETRY. dag_id=course_data_pipeline, task_id=dbt_build, run_id=manual__2026-06-27T16:42:08+00:00, execution_date=20260627T164208, start_date=20260627T164947, end_date=20260627T164949
+[2026-06-27T16:49:49.629+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 8 for task dbt_build (Bash command failed. The command returned a non-zero exit code 1.; 619)
+[2026-06-27T16:49:49.667+0000] {local_task_job_runner.py:243} INFO - Task exited with return code 1
+[2026-06-27T16:49:49.673+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2026-06-27T16:49:49.674+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

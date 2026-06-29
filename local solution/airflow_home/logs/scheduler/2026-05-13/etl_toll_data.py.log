@@ -1,0 +1,102 @@
+[2026-05-13T03:24:23.820+0300] {processor.py:161} INFO - Started process (PID=17249) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:23.821+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:24:23.822+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:24:23.822+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:23.830+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:24:23.823+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:24:23.833+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:23.867+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.048 seconds
+[2026-05-13T03:24:55.387+0300] {processor.py:161} INFO - Started process (PID=17833) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:55.389+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:24:55.390+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:24:55.390+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:55.397+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:24:55.390+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:24:55.400+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:24:55.435+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.049 seconds
+[2026-05-13T03:25:26.539+0300] {processor.py:161} INFO - Started process (PID=18411) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:26.541+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:25:26.541+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:25:26.541+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:26.549+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:25:26.541+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:25:26.552+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:26.587+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.049 seconds
+[2026-05-13T03:25:57.678+0300] {processor.py:161} INFO - Started process (PID=18991) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:57.680+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:25:57.680+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:25:57.680+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:57.687+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:25:57.680+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:25:57.689+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:25:57.725+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.048 seconds
+[2026-05-13T03:26:28.764+0300] {processor.py:161} INFO - Started process (PID=19561) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:26:28.766+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:26:28.767+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:26:28.767+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:26:28.774+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:26:28.767+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:26:28.777+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:26:28.812+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.049 seconds
+[2026-05-13T03:26:59.945+0300] {processor.py:161} INFO - Started process (PID=20114) to work on /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:26:59.947+0300] {processor.py:830} INFO - Processing file /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py for tasks to queue
+[2026-05-13T03:26:59.947+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:26:59.947+0300] {dagbag.py:545} INFO - Filling up the DagBag from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:26:59.957+0300] {logging_mixin.py:188} INFO - [2026-05-13T03:26:59.948+0300] {dagbag.py:355} ERROR - Failed to import: /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+Traceback (most recent call last):
+  File "/Users/abdullah/Documents/Project/Coursera preuse/.venv/lib/python3.9/site-packages/airflow/models/dagbag.py", line 351, in parse
+    loader.exec_module(new_module)
+  File "<frozen importlib._bootstrap_external>", line 846, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 983, in get_code
+  File "<frozen importlib._bootstrap_external>", line 913, in source_to_code
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py", line 57
+    "awk '{print substr($0,1,5) \\",\\" substr($0,7,10)}' "
+                                                          ^
+SyntaxError: unexpected character after line continuation character
+[2026-05-13T03:26:59.961+0300] {processor.py:842} WARNING - No viable dags retrieved from /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py
+[2026-05-13T03:27:00.002+0300] {processor.py:183} INFO - Processing /Users/abdullah/Documents/Project/Coursera preuse/airflow_home/dags/etl_toll_data.py took 0.059 seconds

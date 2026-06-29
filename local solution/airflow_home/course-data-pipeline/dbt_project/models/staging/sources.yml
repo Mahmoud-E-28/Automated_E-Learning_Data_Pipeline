@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_data
+    schema: main
+    tables:
+      - name: coursera_final_data
+      - name: udacity_final_data
+      - name: udemy_final_data

@@ -1,0 +1,149 @@
+version: 2
+
+models:
+  - name: stg_coursera
+    description: "Cleaned and standardized Coursera courses data"
+    columns:
+      - name: course_id
+        description: "Unique identifier for the course"
+        tests: [unique, not_null]
+      - name: platform
+        description: "Source platform name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Coursera']
+      - name: title
+        description: "Course title"
+        tests: [not_null]
+      - name: language
+        description: "Standardized full English language name"
+      - name: duration_raw
+        description: "Original duration string from source"
+      - name: duration_hours
+        description: "Parsed duration in hours (float)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: rating
+        description: "Course rating (0-5 scale)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+              config:
+                severity: warn
+      - name: price
+        description: "Course price"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: enrolled_students
+        description: "Number of enrolled students"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+
+  - name: stg_udemy
+    description: "Cleaned and standardized Udemy courses data"
+    columns:
+      - name: course_id
+        description: "Unique identifier for the course"
+        tests: [unique, not_null]
+      - name: platform
+        description: "Source platform name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Udemy']
+      - name: title
+        description: "Course title"
+        tests: [not_null]
+      - name: language
+        description: "Standardized full English language name"
+      - name: duration_raw
+        description: "Original duration string from source"
+      - name: duration_hours
+        description: "Parsed duration in hours (float)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: rating
+        description: "Course rating (0-5 scale)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+              config:
+                severity: warn
+      - name: price
+        description: "Course price"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: enrolled_students
+        description: "Number of enrolled students"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+
+  - name: stg_udacity
+    description: "Cleaned and standardized Udacity courses data"
+    columns:
+      - name: course_id
+        description: "Unique identifier for the course"
+        tests: [unique, not_null]
+      - name: platform
+        description: "Source platform name"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Udacity']
+      - name: title
+        description: "Course title"
+        tests: [not_null]
+      - name: language
+        description: "Standardized full English language name"
+      - name: duration_raw
+        description: "Original duration string from source"
+      - name: duration_hours
+        description: "Parsed duration in hours (float)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: rating
+        description: "Course rating (0-5 scale)"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+              config:
+                severity: warn
+      - name: price
+        description: "Course price"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn
+      - name: enrolled_students
+        description: "Number of enrolled students"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              config:
+                severity: warn

@@ -1,0 +1,4 @@
+Rowid,Timestamp,VehicleNumber,VehicleType
+1,2024-01-01 00:00:01,ABC123,Car
+2,2024-01-01 00:00:02,XYZ789,Truck
+3,2024-01-01 00:00:03,LMN456,Van

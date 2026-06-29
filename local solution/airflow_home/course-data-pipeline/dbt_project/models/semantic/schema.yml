@@ -1,0 +1,73 @@
+version: 2
+
+models:
+
+  - name: sem_platform_performance
+    description: "Aggregated KPIs per learning platform (Coursera, Udemy, Udacity)"
+    columns:
+      - name: platform
+        description: "Platform name"
+        tests:
+          - unique
+          - not_null
+      - name: total_courses
+        tests:
+          - not_null
+      - name: avg_rating
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+
+  - name: sem_domain_trends
+    description: "Course metrics aggregated by knowledge domain/category"
+    columns:
+      - name: domain_name
+        description: "Domain/category name"
+        tests:
+          - unique
+          - not_null
+      - name: total_courses
+        tests:
+          - not_null
+
+  - name: sem_instructor_rankings
+    description: "Instructor performance rankings based on composite score"
+    columns:
+      - name: instructor
+        description: "Instructor name"
+        tests:
+          - unique
+          - not_null
+      - name: overall_rank
+        tests:
+          - unique
+          - not_null
+      - name: composite_score
+        tests:
+          - not_null
+
+  - name: sem_pricing_analysis
+    description: "Pricing analysis across price categories with platform breakdowns"
+    columns:
+      - name: price_category
+        description: "Price tier (Free, Cheap, Medium, Expensive, Premium, Unknown)"
+        tests:
+          - unique
+          - not_null
+      - name: course_count
+        tests:
+          - not_null
+
+  - name: sem_course_quality_tiers
+    description: "Course quality classification into tiers per platform and domain"
+    columns:
+      - name: quality_tier
+        description: "Quality classification tier"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Premium', 'High', 'Medium', 'Low', 'Unrated']
+      - name: course_count
+        tests:
+          - not_null
