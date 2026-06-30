@@ -395,7 +395,7 @@ All **Data Engineers** building this project:
 | Amin Ashraf | [LinkedIn](https://www.linkedin.com/in/amin-ashraf) |
 | Mariam Ibrahim | [LinkedIn](https://www.linkedin.com/in/mariam--ibrahim) |
 | Yomna Mohamed | [LinkedIn](https://www.linkedin.com/in/yomna-mohamed-b357492a7) |
-| Abdullah De | [LinkedIn](https://www.linkedin.com/in/abdullah-de) |
+| Abdullah Zidan | [LinkedIn](https://www.linkedin.com/in/abdullah-de) |
 
 **Skills:** dbt | Airflow | DuckDB | Fabric | Power BI | SQL | Python | Data Modeling
 
