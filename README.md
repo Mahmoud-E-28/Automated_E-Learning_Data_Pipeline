@@ -135,7 +135,7 @@ dbt seed --project-dir local_solution/airflow_home/dbt \
 - `udacity_final_data.csv` (485 rows)
 - `udemy_final_data.csv` (22,6180 rows)
 
-![dbt Seeds](docs/screenshots/seeds.png)
+![dbt Seeds](documents/screenshots/seeds.png)
 
 ---
 
@@ -143,7 +143,7 @@ dbt seed --project-dir local_solution/airflow_home/dbt \
 
 **Kimball Star Schema** optimized for BI and recommendation systems.
 
-![Star Schema](docs/screenshots/Pipelining.png)
+![Star Schema](documents/screenshots/Pipelining.png)
 
 ---
 
@@ -163,7 +163,7 @@ dbt run --project-dir local_solution/airflow_home/dbt \
 - 8 dimension tables
 - 1 fact table
 
-![dbt Run](docs/screenshots/run.png)
+![dbt Run](documents/screenshots/run.png)
 
 ---
 
@@ -186,10 +186,10 @@ dbt test --project-dir local_solution/airflow_home/dbt \
 
 **Result:** ✅ 73 tests PASSED
 
-![dbt Tests Results 1](docs/screenshots/test.png)
-![dbt Tests Results 2](docs/screenshots/test2.png)
-![dbt Tests Results 3](docs/screenshots/test3.png)
-![dbt Tests Results 4](docs/screenshots/test4.png)
+![dbt Tests Results 1](documents/screenshots/test.png)
+![dbt Tests Results 2](documents/screenshots/test2.png)
+![dbt Tests Results 3](documents/screenshots/test3.png)
+![dbt Tests Results 4](documents/screenshots/test4.png)
 
 ---
 
@@ -209,7 +209,7 @@ dbt docs serve
 - All transformations and dependencies
 - Data flow from 3 platforms → unified star schema
 
-![Lineage Graph](docs/screenshots/Lineage_Graph.png)
+![Lineage Graph](documents/screenshots/Lineage_Graph.png)
 
 ---
 
@@ -228,8 +228,8 @@ dbt docs serve
 Open: PowerBI_Dashboard.pbix
 ```
 
-![Power BI Dashboard 1](docs/screenshots/power.jpeg)
-![Power BI Dashboard 2](docs/screenshots/power2.jpeg)
+![Power BI Dashboard 1](documents/screenshots/power.jpeg)
+![Power BI Dashboard 2](documents/screenshots/power2.jpeg)
 
 ---
 
@@ -255,7 +255,7 @@ validate_cookie → scrape_udemy → scrape_udacity → scrape_coursera
                               dbt_test
 ```
 
-![Airflow DAG](docs/screenshots/airflow.png)
+![Airflow DAG](documents/screenshots/airflow.png)
 
 ---
 
@@ -275,7 +275,7 @@ Semantic model refresh (Power BI)
 PowerBI_Dashboard (Live)
 ```
 
-![Fabric Pipeline](docs/screenshots/Pipelining.png)
+![Fabric Pipeline](documents/screenshots/Pipelining.png)
 
 ---
 
@@ -361,11 +361,11 @@ Open: PowerBI_Dashboard.pbix
 
 | Document | Purpose |
 |----------|---------|
-| [Technical Doc](./docs/Technical_Documentation.pdf) | Architecture, dbt layers, schema |
-| [Cloud Setup](./docs/Cloud_Pipeline_Documentation.pdf) | Fabric deployment guide |
-| [User Manual](./docs/User_Manual.pdf) | How to run pipelines |
-| [Data Flow](./docs/Data_Flow_System_Behavior.pdf) | DFDs, sequence diagrams |
-| [Proposal](./docs/Project_Proposal.pdf) | Business case, objectives |
+| [Technical Doc](./documents/presentation/Technical_Documentation.pdf) | Architecture, dbt layers, schema |
+| [Cloud Setup](./documents/presentation/Cloud_Pipeline_Documentation.pdf) | Fabric deployment guide |
+| [User Manual](./documents/presentation/User_Manual.pdf) | How to run pipelines |
+| [Data Flow](./documents/presentation/Data_Flow_System_Behavior.pdf) | DFDs, sequence diagrams |
+| [Proposal](./documents/presentation/Project_Proposal.pdf) | Business case, objectives |
 
 ---
 
@@ -386,12 +386,16 @@ Open: PowerBI_Dashboard.pbix
 
 All **Data Engineers** building this project:
 
+# Team Connections
+
 | Name | LinkedIn |
-|------|----------|
+| :--- | :--- |
 | Mahmoud Ehab | [LinkedIn](https://www.linkedin.com/in/mahmoud-ehab-data) |
 | Marwan Abdelmenuem | [LinkedIn](https://www.linkedin.com/in/marwan--abdelmenuem) |
 | Amin Ashraf | [LinkedIn](https://www.linkedin.com/in/amin-ashraf) |
 | Mariam Ibrahim | [LinkedIn](https://www.linkedin.com/in/mariam--ibrahim) |
+| Yomna Mohamed | [LinkedIn](https://www.linkedin.com/in/yomna-mohamed-b357492a7) |
+| Abdullah De | [LinkedIn](https://www.linkedin.com/in/abdullah-de) |
 
 **Skills:** dbt | Airflow | DuckDB | Fabric | Power BI | SQL | Python | Data Modeling
 
