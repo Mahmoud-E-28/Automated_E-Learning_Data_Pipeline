@@ -1,0 +1,73 @@
+version: 2
+
+models:
+  # DIMENSIONS
+  - name: dim_platform
+  - name: dim_domain
+  - name: dim_level
+  - name: dim_language
+  - name: dim_instructor
+  - name: dim_offering_type
+  - name: dim_date
+  
+  - name: dim_offering
+    columns:
+      - name: offering_sk
+        tests:
+          - unique
+          - not_null
+      - name: offering_id
+        tests:
+          - not_null
+
+  # FACT TABLE
+  - name: fact_offerings
+    columns:
+      - name: offering_sk
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_offering')
+              field: offering_sk
+      - name: platform_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_platform')
+              field: platform_id
+      - name: domain_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_domain')
+              field: domain_id
+      - name: level_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_level')
+              field: level_id
+      - name: language_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_language')
+              field: language_id
+      - name: instructor_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_instructor')
+              field: instructor_id
+      - name: offering_type_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_offering_type')
+              field: offering_type_id
+      - name: date_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: date_id

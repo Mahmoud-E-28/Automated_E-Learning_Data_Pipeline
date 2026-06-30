@@ -1,0 +1,48 @@
+version: 2
+
+models:
+
+  - name: stg_coursera
+    columns:
+      - name: course_id
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        tests:
+          - not_null
+
+      - name: platform
+        tests:
+          - not_null
+
+  - name: stg_udemy
+    columns:
+      - name: course_id
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        tests:
+          - not_null
+
+      - name: platform
+        tests:
+          - not_null
+
+  - name: stg_udacity
+    columns:
+      - name: course_id
+        tests:
+          - unique
+          - not_null
+
+      - name: title
+        tests:
+          - not_null
+
+      - name: platform
+        tests:
+          - not_null

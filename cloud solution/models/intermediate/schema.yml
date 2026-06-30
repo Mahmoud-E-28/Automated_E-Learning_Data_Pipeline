@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: int_courses_combined
+    columns:
+      - name: course_id
+        tests:
+          - not_null
+      - name: platform
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Coursera', 'Udacity', 'Udemy']
+      - name: title
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - course_id
+            - platform
+
+  - name: int_courses_standardized
+    columns:
+      - name: course_id
+        tests:
+          - not_null
+      - name: platform
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Coursera', 'Udacity', 'Udemy']
+      - name: level
+        tests:
+          - accepted_values:
+              values: ['Beginner', 'Intermediate', 'Advanced', 'All Levels', 'Unknown']
+      - name: price_category
+        tests:
+          - accepted_values:
+              values: ['Free', 'Cheap', 'Medium', 'Expensive', 'Premium', 'Unknown']
+      - name: duration_category
+        tests:
+          - accepted_values:
+              values: ['Short', 'Medium', 'Long', 'Extensive', 'Unknown']
+      - name: rating
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 5
+              severity: warn
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - course_id
+            - platform
