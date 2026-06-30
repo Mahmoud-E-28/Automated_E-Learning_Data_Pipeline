@@ -1,0 +1,161 @@
+[0m04:56:23.304882 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AB0BBFB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AD7B7620>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AD7B5190>]}
+
+
+============================== 04:56:23.323150 | 99a02be7-1233-4d2d-a60e-17ef57544da5 ==============================
+[0m04:56:23.323150 [info ] [MainThread]: Running with dbt=1.11.7
+[0m04:56:23.326328 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\HP\\.dbt', 'use_colors': 'True', 'invocation_command': 'dbt ', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'i:\\Automated E-Learning Data Pipeline\\cloud solution\\logs'}
+[0m04:56:24.245551 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '99a02be7-1233-4d2d-a60e-17ef57544da5', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AF9011C0>]}
+[0m04:56:24.363284 [debug] [MainThread]: Set downloads directory='C:\Users\HP\AppData\Local\Temp\dbt-downloads-esfnjgr7'
+[0m04:56:24.364940 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m04:56:25.753594 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m04:56:25.755593 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m04:56:26.529903 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m04:56:26.565829 [info ] [MainThread]: Updating lock file in file path: I:\Automated E-Learning Data Pipeline\cloud solution/package-lock.yml
+[0m04:56:26.594585 [debug] [MainThread]: Set downloads directory='C:\Users\HP\AppData\Local\Temp\dbt-downloads-uo9ylkis'
+[0m04:56:26.602589 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m04:56:30.763839 [error] [MainThread]: Encountered an error:
+[WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0\\integration_tests'
+[0m04:56:31.044304 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 847, in move
+    os.rename(src, real_dst)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0' -> 'dbt_packages\\dbt_utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 258, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\task\deps.py", line 332, in run
+    package.install(self.project, renderer)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\registry.py", line 63, in install
+    self._install(project, renderer)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\base.py", line 121, in _install
+    connection_exception_retry(download_untar_fn, 5)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\utils\connection.py", line 22, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\base.py", line 133, in download_and_untar
+    system.untar_package(tar_path, deps_path, package_name)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\clients\system.py", line 660, in untar_package
+    dbt_common.clients.system.rename(downloaded_path, desired_path, force=True)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\clients\system.py", line 617, in rename
+    shutil.move(from_path, to_path)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 865, in move
+    rmtree(src)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 629, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 627, in _rmtree_unsafe
+    os.rmdir(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0\\integration_tests'
+
+[0m04:56:31.050335 [debug] [MainThread]: Command `cli deps` failed at 04:56:31.048817 after 8.25 seconds
+[0m04:56:31.052929 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AD812AE0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AF93F2F0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001A9AF8B9640>]}
+[0m04:56:31.054923 [debug] [MainThread]: Flushing usage events
+[0m04:56:33.057027 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m05:03:48.028436 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E6D380B60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E6FA05C10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E6FA05910>]}
+
+
+============================== 05:03:48.042661 | 8dffebd5-ecef-49ae-b57b-7f0d2de61f68 ==============================
+[0m05:03:48.042661 [info ] [MainThread]: Running with dbt=1.11.7
+[0m05:03:48.044208 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\HP\\.dbt', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt ', 'use_experimental_parser': 'False', 'log_path': 'i:\\Automated E-Learning Data Pipeline\\cloud solution\\logs'}
+[0m05:03:48.519547 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '8dffebd5-ecef-49ae-b57b-7f0d2de61f68', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E6D465D00>]}
+[0m05:03:48.860160 [debug] [MainThread]: Set downloads directory='C:\Users\HP\AppData\Local\Temp\dbt-downloads-8nrggka8'
+[0m05:03:48.861142 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m05:03:50.068182 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m05:03:50.073471 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m05:03:51.274406 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m05:03:51.283039 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m05:03:54.972874 [error] [MainThread]: Encountered an error:
+[WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0\\integration_tests'
+[0m05:03:55.003489 [error] [MainThread]: Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 847, in move
+    os.rename(src, real_dst)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0' -> 'dbt_packages\\dbt_utils'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 258, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\requires.py", line 321, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\cli\main.py", line 461, in deps
+    results = task.run()
+              ^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\task\deps.py", line 332, in run
+    package.install(self.project, renderer)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\registry.py", line 63, in install
+    self._install(project, renderer)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\base.py", line 121, in _install
+    connection_exception_retry(download_untar_fn, 5)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\utils\connection.py", line 22, in connection_exception_retry
+    return fn()
+           ^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt\deps\base.py", line 133, in download_and_untar
+    system.untar_package(tar_path, deps_path, package_name)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\clients\system.py", line 660, in untar_package
+    dbt_common.clients.system.rename(downloaded_path, desired_path, force=True)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\site-packages\dbt_common\clients\system.py", line 617, in rename
+    shutil.move(from_path, to_path)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 865, in move
+    rmtree(src)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 629, in _rmtree_unsafe
+    onexc(os.rmdir, fullname, err)
+  File "C:\Users\HP\AppData\Local\Programs\Python\Python312\Lib\shutil.py", line 627, in _rmtree_unsafe
+    os.rmdir(fullname)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'dbt_packages\\dbt-utils-1.4.0\\integration_tests'
+
+[0m05:03:55.009491 [debug] [MainThread]: Command `cli deps` failed at 05:03:55.008488 after 7.43 seconds
+[0m05:03:55.014020 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E6FEBEEA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E7021FE60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000027E71B89280>]}
+[0m05:03:55.016019 [debug] [MainThread]: Flushing usage events
+[0m05:03:57.327626 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m15:04:38.009410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A109A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A10AA80>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A10A720>]}
+
+
+============================== 15:04:38.014418 | f81a2868-b5c7-48c1-bb63-cd052a620be7 ==============================
+[0m15:04:38.014418 [info ] [MainThread]: Running with dbt=1.11.7
+[0m15:04:38.015418 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\HP\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt ', 'use_experimental_parser': 'False', 'log_path': 'i:\\Automated E-Learning Data Pipeline\\cloud solution\\logs'}
+[0m15:04:38.299410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'f81a2868-b5c7-48c1-bb63-cd052a620be7', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A13A5A0>]}
+[0m15:04:38.425403 [debug] [MainThread]: Set downloads directory='C:\Users\HP\AppData\Local\Temp\dbt-downloads-48ecduzb'
+[0m15:04:38.426409 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m15:04:38.920918 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m15:04:38.923333 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m15:04:39.610894 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m15:04:39.618849 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m15:04:41.355673 [info ] [MainThread]: Installed from version 1.4.0
+[0m15:04:41.356695 [info ] [MainThread]: Updated version available: 1.4.1
+[0m15:04:41.357680 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': 'f81a2868-b5c7-48c1-bb63-cd052a620be7', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A3AC530>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3B6B6A20>]}
+[0m15:04:41.358699 [info ] [MainThread]: 
+[0m15:04:41.358699 [info ] [MainThread]: Updates available for packages: ['dbt-labs/dbt_utils']                 
+Update your versions in packages.yml, then run dbt deps
+[0m15:04:41.362682 [debug] [MainThread]: Command `cli deps` succeeded at 15:04:41.361680 after 3.51 seconds
+[0m15:04:41.362682 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE39AF83B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A109A60>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001AE3A10A720>]}
+[0m15:04:41.363681 [debug] [MainThread]: Flushing usage events
+[0m15:04:42.504161 [debug] [MainThread]: An error was encountered while trying to flush usage events
