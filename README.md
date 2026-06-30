@@ -143,8 +143,8 @@ dbt seed --project-dir local_solution/airflow_home/dbt \
 
 **Kimball Star Schema** optimized for BI and recommendation systems.
 
-![Star Schema](documents/screenshots/Pipelining.png)
-
+![Star Schema](documents/screenshots/modling.png)
+![Star Schema](documents/screenshots/modling2.png)
 ---
 
 ## ▶️ dbt Run
